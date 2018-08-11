@@ -29,4 +29,4 @@ Stock market data is sequential, and each observation comes a day after the prev
 
 **Conclusion:**
 
->> We have used the above 3 indicators to train a linear regression model.  **Mean Absolute Error (MAE) is used as an error metric, because it intuitively denotes how "close" we are to the price.** A plot of predicted prices and actual prices on test data is plotted. It is almost linear which means the prediction is working. it can be improved with other models such as randomforest or using engineered features such as previous volume, highest/ lowest price in the past year etc.
+We have used the above 3 indicators to train a linear regression model.  **Mean Absolute Error (MAE) is used as an error metric, because it intuitively denotes how "close" we are to the price.** A plot of predicted prices and actual prices on test data is plotted. It is almost linear which means the prediction is working. it can be improved with other models such as randomforest or using engineered features such as previous volume, highest/ lowest price in the past year etc.
