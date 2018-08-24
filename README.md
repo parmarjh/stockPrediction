@@ -1,18 +1,12 @@
-# Stock Prediction #
+# An Attempt to Predict Stock Market Prices #
 
-## Objective ## 
-
-In this project, we'll be working with data from the S&P500 Index. The S&P500 is a stock market index. Stocks are traded daily, and the price can rise or fall from the beginning of a trading day to the end based on demand. Indexes aggregate the prices of multiple stocks together, and allow you to see how the market as a whole is performing. For example, the Dow Jones Industrial Average aggregates the stock prices of 30 large American companies together. The S&P500 Index aggregates the stock prices of 500 large companies. 
-
-**We'll be using historical data on the price of the S&P500 Index to make predictions about future prices.** Predicting whether an index will go up or down will help us forecast how the stock market as a whole will perform. **Since stocks tend to correlate with how well the economy as a whole is performing, it can also help us make economic forecasts. **
-
-Traders who make money by buying and selling Exchange Traded Funds (ETFs) buy and sell indexes like stocks. An accurate forecast would help the traders "buy" S&P500 Index ETF when the price is low, and sell when it's high, to make profit.
+## Data Description ##
 
 In this mission, **we’ll be working with a csv file containing index prices. Each row in the file contains a daily record of the price of the S&P500 Index from 1950 to 2015**. The dataset is stored in sphist.csv.
 
 Data Source: https://github.com/AdroitAnandAI/stockPrediction/blob/master/sphist.csv
 
-## Attribute Information ##
+***Attribute Information***
 
 The columns of the dataset are:
 * Date -- The date of the record.
@@ -23,16 +17,9 @@ The columns of the dataset are:
 * Volume -- The number of shares traded.
 * Adj Close -- The daily closing price, adjusted for corporate actions.
 
-## Analysis ##
-
 **We’ll be using this dataset to develop a predictive model. We’ll train the model with data from 1950-2012, and try to make predictions from 2013-2015.**
 
-Stock market data is sequential, and each observation comes a day after the previous observation. Thus, the observations are not all independent. Hence we must be careful not to inject future knowledge, otherwise it will just make our model look good but when you're training and testing it, but will make it fail in the real world. The time series nature of the data means that can generate indicators. 
-
-**Hence we have created new columns** that contains:
-* The **average price** for the past 365 days.
-* The **ratio between the average price** for the past 5 days, and the average price for the past 365 days.
-* The **standard deviation of the price** over the past 365 days
+From the sorted data, we can see that data since Jan 1950 is there in the input dataset.
 
 ## Prediction of Stock Prices: Week Ahead ##
 
@@ -64,9 +51,9 @@ Median Absolute Percentage Error (MAPE) = 6.0%
 
 ## Conclusion: ##
 
-1. In daily forecast, Actual and Predicted prices are almost linear. Hence the daily prediction model is working fine, though the error can be further reduced with a better model such as randomforest or using feature engineering techniques such as previous volume, highest/ lowest price in the past year etc.
+1. In daily forecast, **Actual and Predicted prices are almost linear. Hence the daily prediction model is working fine**, though the error can be further reduced with a better model such as randomforest or using feature engineering techniques such as previous volume, highest/ lowest price in the past year etc.
 
-2. For a financial company, another way to reframe this problem would be to perceive the problem as a classification problem, instead of regression problem. If we can predict, whether the price of a particular stock would go up or down, on next day or a period of time
+2. For a financial company, another way to reframe this problem would be **to perceive the problem as a classification problem, instead of regression problem**. If we can predict, whether the price of a particular stock would go up or down, on next day or a period of time
 then such a system is very useful.
 
 3. There was a Kaggle competition on similar lines and all of the good solutions just predicted 0% change in price most of the times.
